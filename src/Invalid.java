@@ -6,6 +6,7 @@ public class Invalid{
         if (number > 1) ;
         System.exit(0);
     }
-    // TODO: 2017/02/26 :Add the validation of 13 numbers here so as not to clutter the mainAlso, put on Git.
+    // TODO: 2017/02/26 :Add the validation of 13 numbers here so as not to clutter the main. Also, put on Github and local git
+    // TODO: 2017/02/26 : Learn git bash commands 
 
 }
