@@ -13,24 +13,26 @@ public class Main {
         int gender = Integer.valueOf(identity.substring(6, 10));
         int citizen = Integer.valueOf(identity.substring(10, 11));
 
-        StringBuffer buffer = new StringBuffer(identity);
+        StringBuilder buffer = new StringBuilder(identity);
         char[] person = identity.toCharArray();
 
         Validation validate = new Validation();
         Invalid invalidate = new Invalid();
+        Luhn luhn = new Luhn();
 
         int length = person.length;
         // TODO: 2017/02/26 : Check why the catch seemingly isn't working
-        try {
+        {
             if (length == 13) {
-                invalidate.invalid(citizen);
-                System.out.println(validate.getGender(gender));
-                System.out.println(validate.getCitizenship(citizen));
+                //invalidate.invalid(citizen);
+                //System.out.println(validate.getGender(gender));
+                //System.out.println(validate.getCitizenship(citizen));
+                //System.out.println();
+                System.out.println(luhn.getIdentitySummation(ID_No));
+
             }
-        } catch (Exception exc) {
-            System.out.println("Invalid Identity number");
-        } finally {
-            System.out.println("Please try again: ");
+
+
         }
     }
 }
