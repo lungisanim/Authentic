@@ -13,9 +13,9 @@ public class Test {
         int checksum = Integer.valueOf(check);
         char[] chars = identity.toCharArray();
         int size = chars.length;
-        int sumOdd = 0, sumEven = 0, sumDoubled = 0, doubledSum = 0;
-        int sum = 0, x = 0;
-        while (x < size) {
+        int sumOdd = 0, sumEven, sumDoubled = 0;
+        int sum = 0, _doubled;
+        for (int x = 0; x < length; x++) {
             if (x % 2 == 0) {
                 String numString = String.valueOf(chars[x]);
                 int numbers = Integer.valueOf(numString);
@@ -25,20 +25,15 @@ public class Test {
                 int numbers = Integer.valueOf(numString);
                 int doubled = numbers * 2;
                 if (doubled > 9) {
-                    String doubledString = String.valueOf(doubled);
-                    char[] doubledChar = doubledString.toCharArray();
-                    for (char array : doubledChar) {
-                        String stringer = String.valueOf(array);
-                        int stringerInt = Integer.valueOf(stringer);
-                        sumDoubled += stringerInt;
-                    }
+                    _doubled = doubled - 9;
+                }else {
+                    _doubled = doubled;
                 }
-                doubledSum = doubled + sumDoubled;
+                sumDoubled += _doubled;
             }
-            x++;
         }
-        doubledSum = doubledSum - 4;
-        int summation = sumOdd + doubledSum;
+        sumEven =+ sumDoubled;
+        int summation = sumOdd + sumEven;
         int sums = summation * 9;
         if (sums % 10 == checksum) {
             System.out.println("Valid Identity number.");
