@@ -7,32 +7,27 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Please enter an identity number to validate: ");
         BigInteger ID_No = Input.getInteger();
+        String identify = String.valueOf(ID_No);
+        String genderSt = identify.substring(6, 10);
+        int gender = Integer.valueOf(genderSt);
+        String citiSt = identify.substring(10, 11);
+        int citizen = Integer.valueOf(citiSt);
+        String contStr = identify.substring(11,12);
+        int control = Integer.valueOf(contStr);
 
-        String identity = String.valueOf(ID_No);
-        String male = null, female = null;
-        int gender = Integer.valueOf(identity.substring(6, 10));
-        int citizen = Integer.valueOf(identity.substring(10, 11));
-
-        StringBuilder buffer = new StringBuilder(identity);
-        char[] person = identity.toCharArray();
-
-        Validation validate = new Validation();
-        Invalid invalidate = new Invalid();
         Luhn luhn = new Luhn();
+        Validation validation = new Validation();
+        Invalid invalid = new Invalid();
 
-        int length = person.length;
-        // TODO: 2017/02/26 : Check why the catch seemingly isn't working
-        {
-            if (length == 13) {
-                //invalidate.invalid(citizen);
-                //System.out.println(validate.getGender(gender));
-                //System.out.println(validate.getCitizenship(citizen));
-                //System.out.println();
-                System.out.println(luhn.getIdentitySummation(ID_No));
-
-            }
-
-
+        if(luhn.getIdentitySummation(ID_No) && (control == 8 || control == 9)){
+            System.out.println("Valid Identification Number: ");
+            System.out.println(validation.getGender(gender));
+            System.out.println(validation.getCitizenship(citizen));
+        }else {
+            System.out.println("Invalid Identification Number");
+            invalid.invalid(0);
         }
+
+
     }
 }
