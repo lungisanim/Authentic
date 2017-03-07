@@ -15,17 +15,13 @@ public class Main {
         String contStr = identify.substring(11,12);
         int control = Integer.valueOf(contStr);
 
-        Luhn luhn = new Luhn();
-        Validation validation = new Validation();
-        Invalid invalid = new Invalid();
-
-        if(luhn.getIdentitySummation(ID_No) && (control == 8 || control == 9)){
+        if(Luhn.isIdentificationValid(ID_No) && (control == 8 || control == 9)){
             System.out.println("Valid Identification Number: ");
-            System.out.println(validation.getGender(gender));
-            System.out.println(validation.getCitizenship(citizen));
+            System.out.println(Validation.getGender(gender));
+            System.out.println(Validation.getCitizenship(citizen));
         }else {
             System.out.println("Invalid Identification Number");
-            invalid.invalid(0);
+            //Invalid.invalid(0);
         }
 
 

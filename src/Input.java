@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * Created by lungisani on 2017/02/25.
  */
-public class Input {
+class Input {
     static BigInteger getInteger(){
         Scanner in = new Scanner(System.in);
         try{
