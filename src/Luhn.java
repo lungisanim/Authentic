@@ -4,7 +4,7 @@ import java.math.BigInteger;
  * Created by lungisani on 2017/02/25.
  */
 class Luhn {
-    public static Boolean isIdentificationValid(BigInteger identities){
+    public static Boolean IsIdentificationValid(BigInteger identities){
         char[] identify = identities.toString().toCharArray();
         int summation = 0;
         for(int x = 0; x < identify.length - 1; x++){

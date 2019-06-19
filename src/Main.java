@@ -15,10 +15,10 @@ public class Main {
         String contStr = identify.substring(11,12);
         int control = Integer.valueOf(contStr);
 
-        if(Luhn.isIdentificationValid(ID_No) && (control == 8 || control == 9)){
+        if(Luhn.IsIdentificationValid(ID_No) && (control == 8 || control == 9)){
             System.out.println("Valid Identification Number: ");
-            System.out.println(Validation.getGender(gender));
-            System.out.println(Validation.getCitizenship(citizen));
+            System.out.println(Validation.GetGender(gender));
+            System.out.println(Validation.GetCitizenship(citizen));
         }else {
             System.out.println("Invalid Identification Number");
             //Invalid.invalid(0);
